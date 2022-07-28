@@ -1,0 +1,20 @@
+@import './utils/animation';
+@import './utils/variables';
+@import './utils/mixins';
+@import './base/common';
+@import './utils/mixins';
+@import './utils/variables';
+@import './components/theme.scss';
+@import './layout/header';
+@import './base/container';
+@import './base/section';
+@import './components/pagination';
+@import './components/modal';
+@import './components/modal-log-in';
+@import './components/team-modal';
+@import './layout/catalog';
+@import './layout/footer';
+@import './components/spiner.scss';
+@import './components/backdrop'; // @import './partials/catalog';
+
+// @import './example';

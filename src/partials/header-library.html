@@ -1,0 +1,65 @@
+<header class="header">
+  <section class="header__seaction_library">
+    <h1 class="visually-hidden">library</h1>
+    <h2 class="visually-hidden">header library</h2>
+    <div class="container">
+      <div class="header__div">
+        <a href="./index.html" class="header__logo">
+          <svg class="header__icon_logo" width="24" height="24">
+            <use
+              href="./images/sprite/symbol-defs.svg#icon-logo-filmoteka"
+            ></use>
+          </svg>
+          <p class="header__name">Filmoteka</p>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link" href="./index.html" id="header-home"
+                >
+                <svg class="header__nav_icon" width="10" height="10">
+                  <use href="./images/sprite/symbol-defs.svg#icon-home3"></use>
+                </svg>
+                HOME</a
+              >
+            </li>
+            <li class="header__item">
+              <a
+                class="header__link current-link"
+                href="./library.html"
+                id="header-myLibrary"
+                >
+                <svg class="header__nav_icon" width="10" height="10">
+                  <use href="./images/sprite/symbol-defs.svg#icon-video-camera"></use>
+                </svg>
+                MY LIBRARY</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="header__list-button">
+        <li class="header__item-button">
+          <button type="button" class="button button--current btn--watched">
+            <span class="button-text">WATCHED</span>
+          </button>
+        </li>
+        <li class="header__item-button">
+          <button type="button" class="button btn--queue">
+            <span class="button-text">QUEUE</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div>
+			<!-- hidden -->
+		<button id="toggle-theme-btn"><span class="text_theme-btn">CHANGE THEME</span>
+			<svg width="28px" height="28px">
+				<use class="moon" id="toggle-theme-image" href="./images/icons.svg#moon"></use>
+				<use class="sun" id="toggle-theme-image" href="./images/icons.svg#sun"></use>
+			</svg>
+			<span class="visually-hidden">theme</span>
+		</button>
+    </div>
+  </section>
+</header>
