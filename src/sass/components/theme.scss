@@ -1,13 +1,13 @@
 body.dark {
-    background-color: var(--dark-body-theme);
-	 --sun-color: bisque;
+    // background-color: var(--dark-body-theme);
+	--sun-color: bisque;
 }
 
 body.light::-webkit-scrollbar {
   width: 20;
 }
 body.light::-webkit-scrollbar-track {
-  background: var(--light-body-theme);
+	background: var(--light-body-theme);
 	margin-top: 20px;
 	margin-bottom: 100px;
 	border-radius: 10px;
