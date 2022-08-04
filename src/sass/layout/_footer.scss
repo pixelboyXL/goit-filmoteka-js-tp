@@ -10,13 +10,13 @@
   padding: 30px;
   font-size: 16px;
   line-height: 1.19;
-  background-color: #f7f7f7;
-  color: #545454;
+  background-color: var(--just-white);
+  color: var(--dark-body-theme);
 }
 .footer__icon_logo {
   animation: heartbeat 1250ms cubic-bezier(.25, .1, .25, 1) infinite;
 }
 .footer a {
   text-decoration: underline;
-  color: #545454;
+  color: var(--secondary-text-color);
 }

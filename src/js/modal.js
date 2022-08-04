@@ -214,7 +214,7 @@ function offModal() {
   };
 }
 
-// модалка команды
+// Модалка команды
 
 const modalCloseBtn = `
 <button class="modal__btn-closs btn__closs-modal">
@@ -251,7 +251,7 @@ function renderTeamModal() {
   titleTeam.innerHTML = ''
   modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', titleTeam)
   titleTeam.classList.add('team-modal__title')
-  titleTeam.insertAdjacentHTML('beforeend', 'Cinematics GO IT JS #48')
+  titleTeam.insertAdjacentHTML('beforeend', 'Cinematics GoIT JS #48')
 
 	modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', modalTeamList)
 	modalBackdrop.firstElementChild.insertAdjacentHTML('beforeend', modalCloseBtn)

@@ -37,6 +37,13 @@
             </li>
           </ul>
         </nav>
+        <button id="toggle-theme-btn" class="toggle-theme-btn-for-library">
+          <svg width="28px" height="28px">
+            <use class="moon" id="toggle-theme-image" href="./images/icons.svg#moon"></use>
+            <use class="sun" id="toggle-theme-image" href="./images/icons.svg#sun"></use>
+          </svg>
+          <span class="visually-hidden">theme</span>
+        </button>
       </div>
       <ul class="header__list-button">
         <li class="header__item-button">
@@ -50,16 +57,6 @@
           </button>
         </li>
       </ul>
-    </div>
-    <div>
-			<!-- hidden -->
-		<button id="toggle-theme-btn"><span class="text_theme-btn">CHANGE THEME</span>
-			<svg width="28px" height="28px">
-				<use class="moon" id="toggle-theme-image" href="./images/icons.svg#moon"></use>
-				<use class="sun" id="toggle-theme-image" href="./images/icons.svg#sun"></use>
-			</svg>
-			<span class="visually-hidden">theme</span>
-		</button>
     </div>
   </section>
 </header>

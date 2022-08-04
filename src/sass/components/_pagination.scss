@@ -1,21 +1,25 @@
 .pagination-section {
-	margin: 60px 0;
+	max-width: 1280px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 60px;
+	padding-bottom: 60px;
 	display: flex;
 	justify-content: center;
+	@include mq(desktop) {
+		background-color: var(--light-body-theme);
+	}
 }
-
 .pagination-btns {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-
 .dots {
 	padding: 8px;
 	margin-left: 8px;
 	cursor: default;
 }
-
 .page {
 	padding: 8px;
 	font-weight: 500;
@@ -23,11 +27,9 @@
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 }
-
 .page:hover {
 	transform: scale(140%);
 }
-
 .page.active {
 	cursor: default;
 	display: flex;
@@ -60,15 +62,13 @@
 .arrow.next {
 	transform: rotate(180deg);
 }
-
 .pagination-section.dark {
 	color: bisque;
+	background-color: var(--dark-body-theme);
 }
-
 .pagination-section.dark button {
 	background-color: bisque;
 }
-
 .pagination-section.dark button:hover {
 	background-color: rgba(255, 228, 196, 0.863);
 }
