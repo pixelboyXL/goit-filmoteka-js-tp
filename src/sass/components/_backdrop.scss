@@ -10,13 +10,11 @@
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
 }
-
 .backdrop_is-open {
   background-color: var(--backdrop-mobail-modal);
   opacity: 1;
   pointer-events: initial;
 }
-
 .backdrop_is-open .team-modal {
   background-color: var(--background-modal);
   height: 100vh;
@@ -29,7 +27,6 @@
   position: relative;
   margin: auto;
 }
-
 .modal__close {
   cursor: pointer;
   // background-color: rgb(70, 63, 63);
@@ -42,28 +39,23 @@
   border: none;
   padding-top: 3px;
 }
-
 .modal__close-button {
   // fill: #ff6b08;
   fill: currentColor;
 }
-
 .modal__close-button:hover {
   // fill: #ff6b08;
   fill: var(--acent-modal-hover);
 }
-
 .team__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
 .team__item {
   margin-left: 2%;
   margin-right: 2%;
 }
-
 .team__image {
   border-radius: 50%;
   margin-bottom: 25px;
@@ -74,7 +66,6 @@
   display: block;
   max-width: 100%;
 }
-
 .team__subtitle,
 .team__text {
   font-family: 'Roboto';
@@ -83,12 +74,10 @@
   font-size: 20px;
   line-height: 1.2;
 }
-
 .team__subtitle {
   color: var(--primary-text-color);
   padding-bottom: 5%;
 }
-
 .team__text {
   color: var(--secondary-text-color);
   padding-bottom: 20%;
