@@ -4,7 +4,7 @@ const saveLs = (key, value) => {
     localStorage.setItem(key, serializedState);
   } catch (error) {
     console.error('Set state error: ', error.message);
-  }
+  };
 };
 
 const loadLs = key => {
@@ -13,7 +13,7 @@ const loadLs = key => {
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error('Get state error: ', error.message);
-  }
+  };
 };
 
 const removeLs = key => {
@@ -21,7 +21,7 @@ const removeLs = key => {
     localStorage.removeItem(key);
   } catch (error) {
     console.error('Get state error: ', error.message);
-  }
+  };
 };
 
 // const moviesData = loadLs('moviesData');
@@ -49,11 +49,11 @@ function addListLibrary(id, select) {
     libArr.splice(index, 1);
     //const libData = loadLs(sel);
     libData.splice(index, 1);
-  }
+  };
   saveLs(select, libArr);
   saveLs(sel, libData);
   //moviesData.inclues;
-}
+};
 
 // async function addListLibrary(id, select) {
 // 	const sel = select + 'Data';
@@ -78,9 +78,9 @@ function addListLibrary(id, select) {
 //   }
 //   saveLs(select, libArr);
 //   saveLs(sel, libData);
-
 // }
+
 export { addListLibrary, saveLs, loadLs, removeLs };
 export function moviesDataUpdate(data) {
   localStorage.setItem('moviesData', JSON.stringify(data.results));
-}
+};
