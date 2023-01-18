@@ -4,7 +4,7 @@ const saveSs = (key, value) => {
     localStorage.setItem(key, serializedState);
   } catch (error) {
     console.error('Set state error: ', error.message);
-  }
+  };
 };
 
 const loadSs = key => {
@@ -13,7 +13,7 @@ const loadSs = key => {
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error('Get state error: ', error.message);
-  }
+  };
 };
 
 const removeSs = key => {
@@ -21,6 +21,6 @@ const removeSs = key => {
     localStorage.removeItem(key);
   } catch (error) {
     console.error('Get state error: ', error.message);
-  }
+  };
 };
 export { saveSs, loadSs, removeSs };
