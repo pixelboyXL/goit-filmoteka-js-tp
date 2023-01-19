@@ -23,10 +23,10 @@ const refs = {
 
 if (toMainBtn) {
 	toMainBtn.addEventListener('click', (e) => {
-		page = 1
-		saveLs('page-pg', page)
-	} )
-}
+		page = 1;
+		saveLs('page-pg', page);
+	});
+};
 
 if (refs.genreForm) {
   refs.genreForm.addEventListener('input', eventGenre);
@@ -47,7 +47,7 @@ if (refs.btnReset) {
 
 function submitResetFilter(evn) {
 	spinner.classList.remove('done');
-	nextBtn.classList.remove('is-hidden')
+	nextBtn.classList.remove('is-hidden');
   evn.preventDefault();
   refs.filterForm[0].options.selectedIndex = 0;
   refs.filterForm[1].options.selectedIndex = 0;
@@ -60,7 +60,7 @@ function submitResetFilter(evn) {
 		amountOfPages = 1000;
 	} else {
 		amountOfPages = loadLs('total-pages')
-	}
+	};
 	saveLs('genre-pg', genre);
 	saveLs('year-pg', year);
 	saveLs('sort-pg', sort);
@@ -73,8 +73,8 @@ function submitResetFilter(evn) {
 		spinner.classList.add('done');
 	});
 	saveLs('page-pg', page);
-	clearPagination(amountOfPages)
-}
+	clearPagination(amountOfPages);
+};
 
 logo.addEventListener('click', onLogoClick);
 
@@ -91,14 +91,14 @@ function onLogoClick(e) {
   saveLs('total-pages', amountOfPages);
   saveLs('query-pg', query);
 	saveLs('sort-pg', sort);
-}
+};
 
 if (!loadLs('total-pages')) {
   saveLs('total-pages', 1000);
-}
+};
 if (!loadLs('page-pg')) {
   saveLs('page-pg', 1);
-}
+};
 
 let searchPage = 1;
 let page = loadLs('page-pg');
@@ -122,13 +122,13 @@ function eventGenre(evn) {
         amountOfPages = 500;
       } else {
         amountOfPages = data.total_pages;
-      }
+      };
       clearPagination(amountOfPages);
       saveLs('total-pages', amountOfPages);
 			spinner.classList.add('done');
     });
-  }
-}
+  };
+};
 
 function eventYear(evn) {
   if (evn) {
@@ -143,12 +143,12 @@ function eventYear(evn) {
         amountOfPages = 500;
       } else {
         amountOfPages = data.total_pages;
-      }
+      };
       clearPagination(amountOfPages);
 			spinner.classList.add('done');
 			if(query=='') {
 				saveLs('total-pages', amountOfPages);
-			}
+			};
 			if (amountOfPages === 1) {
 				prevBtn.classList.add('is-hidden');
 				paginationBar.innerHTML = `<li class="page active">1</li>`;
@@ -165,10 +165,10 @@ function eventYear(evn) {
 				}
 			} else {
 				paginationBar.children[8].textContent = amountOfPages;
-			}
+			};
     });
-  }
-}
+  };
+};
 
 function eventSort(evn) {
   if (evn) {
@@ -183,19 +183,19 @@ function eventSort(evn) {
         amountOfPages = 500;
       } else {
         amountOfPages = data.total_pages;
-      }
+      };
       clearPagination(amountOfPages);
       saveLs('total-pages', amountOfPages);
 			spinner.classList.add('done');
     });
-  }
-}
+  };
+};
 
 if (nextBtn) {
   nextBtn.addEventListener('click', onNextBtnClick);
   prevBtn.addEventListener('click', onPrevBtnClick);
   paginationBar.addEventListener('click', onPageClick);
-}
+};
 
 if(location.pathname.split("/").slice(-1) == 'library.html') {
 	amountOfPages = 1000;
@@ -210,7 +210,7 @@ if(location.pathname.split("/").slice(-1) == 'library.html') {
   saveLs('total-pages', amountOfPages);
   saveLs('query-pg', query);
 	saveLs('sort-pg', sort);
-}
+};
 
 if(location.pathname.split("/").slice(-1) != 'library.html') {
 	spinner.classList.remove('done');
@@ -222,7 +222,7 @@ if(location.pathname.split("/").slice(-1) != 'library.html') {
 		if(query) {
 			document.querySelector('#genreForm').classList.add('is-hidden');
 			document.querySelector('#sortForm').classList.add('is-hidden');
-		}
+		};
 	});
 	saveLs('page-pg', page);
 	if (amountOfPages > 1 && amountOfPages < 6) {
@@ -274,7 +274,7 @@ if(location.pathname.split("/").slice(-1) != 'library.html') {
 			<li class="page">${page + 2}</li>
 			<li class="dots">...</li>
 			<li class="page">${amountOfPages}</li>`;
-			}
+			};
 			if (page >= amountOfPages - 2) {
 				paginationBar.innerHTML = `
 			<li class="page">1</li>
@@ -286,7 +286,7 @@ if(location.pathname.split("/").slice(-1) != 'library.html') {
 			<li class="page">${page + 2}</li>
 			<li class="dots is-hidden">...</li>
 			<li class="page is-hidden">${amountOfPages}</li>`;
-			}
+			};
 			if (page == amountOfPages - 1) {
 				paginationBar.innerHTML = `
 				<li class="page">1</li>
@@ -298,8 +298,8 @@ if(location.pathname.split("/").slice(-1) != 'library.html') {
 				<li class="page">${amountOfPages}</li>
 				<li class="dots is-hidden">...</li>
 				<li class="page is-hidden">${amountOfPages}</li>`;
-			}
-		}
+			};
+		};
 		if (page == amountOfPages) {
 			paginationBar.innerHTML = `
 				<li class="page">1</li>
@@ -311,34 +311,34 @@ if(location.pathname.split("/").slice(-1) != 'library.html') {
 				<li class="page active">${amountOfPages}</li>
 				<li class="dots is-hidden">...</li>
 				<li class="page is-hidden">${amountOfPages}</li>`;
-		}
-	}
+		};
+	};
 	if (page == amountOfPages) {
 		nextBtn.classList.add('is-hidden');
 	} else {
 		nextBtn.classList.remove('is-hidden');
-	}
+	};
 	if (page == 1) {
 		prevBtn.classList.add('is-hidden');
 	} else {
 		prevBtn.classList.remove('is-hidden');
-	}	
-}
+	};
+};
 
 function onPageClick(e) {
   if (e.target.className == 'page') {
     renderPagination(e);
-  }
-}
+  };
+};
 
 function onNextBtnClick() {
 	spinner.classList.remove('done');
   if (page == amountOfPages - 1) {
     nextBtn.classList.add('is-hidden');
-  }
+  };
   if (page == 1) {
     prevBtn.classList.remove('is-hidden');
-  }
+  };
   if (amountOfPages > 1 && amountOfPages < 6) {
     paginationBar.children[page].classList.add('active');
     paginationBar.children[page - 1].classList.remove('active');
@@ -358,21 +358,21 @@ function onNextBtnClick() {
         paginationBar.children[4].textContent = page;
         paginationBar.children[5].textContent = page + 1;
         paginationBar.children[6].textContent = page + 2;
-      }
+      };
       if (page >= amountOfPages - 2) {
         paginationBar.children[7].classList.add('is-hidden');
         paginationBar.children[8].classList.add('is-hidden');
-      }
+      };
       if (page == amountOfPages - 1) {
         paginationBar.children[4].classList.remove('active');
         paginationBar.children[5].classList.add('active');
-      }
-    }
+      };
+    };
     if (page == amountOfPages) {
       paginationBar.children[5].classList.remove('active');
       paginationBar.children[6].classList.add('active');
-    }
-  }
+    };
+  };
   getSearchForm(page, query, genre, year, sort).then(data => {
     window.scrollTo({
       top: 100,
@@ -383,16 +383,16 @@ function onNextBtnClick() {
 		spinner.classList.add('done');
   });
   saveLs('page-pg', page);
-}
+};
 
 function onPrevBtnClick() {
 	spinner.classList.remove('done');
   if (page == amountOfPages) {
     nextBtn.classList.remove('is-hidden');
-  }
+  };
   if (page == 2) {
     prevBtn.classList.add('is-hidden');
-  }
+  };
   if (amountOfPages > 1 && amountOfPages < 6) {
     paginationBar.children[page - 2].classList.add('active');
     paginationBar.children[page - 1].classList.remove('active');
@@ -412,8 +412,8 @@ function onPrevBtnClick() {
       if (page == 3) {
         paginationBar.children[0].classList.add('is-hidden');
         paginationBar.children[1].classList.add('is-hidden');
-      }
-    }
+      };
+    };
     if (page == amountOfPages - 2) {
       page -= 1;
       paginationBar.children[7].classList.remove('is-hidden');
@@ -431,8 +431,8 @@ function onPrevBtnClick() {
       page -= 1;
       paginationBar.children[5].classList.add('active');
       paginationBar.children[6].classList.remove('active');
-    }
-  }
+    };
+  };
   getSearchForm(page, query, genre, year, sort).then(data => {
     window.scrollTo({
       top: 100,
@@ -443,7 +443,7 @@ function onPrevBtnClick() {
 		spinner.classList.add('done');
   });
   saveLs('page-pg', page);
-}
+};
 
 function renderPagination(e) {
 	spinner.classList.remove('done');
@@ -497,7 +497,7 @@ function renderPagination(e) {
 			<li class="page">${page + 2}</li>
 			<li class="dots">...</li>
 			<li class="page">${amountOfPages}</li>`;
-      }
+      };
       if (page >= amountOfPages - 2) {
         paginationBar.innerHTML = `
 			<li class="page">1</li>
@@ -509,7 +509,7 @@ function renderPagination(e) {
 			<li class="page">${page + 2}</li>
 			<li class="dots is-hidden">...</li>
 			<li class="page is-hidden">${amountOfPages}</li>`;
-      }
+      };
       if (page == amountOfPages - 1) {
         paginationBar.innerHTML = `
 				<li class="page">1</li>
@@ -521,8 +521,8 @@ function renderPagination(e) {
 				<li class="page">${amountOfPages}</li>
 				<li class="dots is-hidden">...</li>
 				<li class="page is-hidden">${amountOfPages}</li>`;
-      }
-    }
+      };
+    };
     if (page == amountOfPages) {
       paginationBar.innerHTML = `
 				<li class="page">1</li>
@@ -534,18 +534,18 @@ function renderPagination(e) {
 				<li class="page active">${amountOfPages}</li>
 				<li class="dots is-hidden">...</li>
 				<li class="page is-hidden">${amountOfPages}</li>`;
-    }
-  }
+    };
+  };
   if (page == amountOfPages) {
     nextBtn.classList.add('is-hidden');
   } else {
     nextBtn.classList.remove('is-hidden');
-  }
+  };
   if (page == 1) {
     prevBtn.classList.add('is-hidden');
   } else {
     prevBtn.classList.remove('is-hidden');
-  }
+  };
 
   getSearchForm(page, query, genre, year, sort).then(data => {
     window.scrollTo({
@@ -557,7 +557,7 @@ function renderPagination(e) {
 		spinner.classList.add('done');
   });
   saveLs('page-pg', page);
-}
+};
 
 // if(!paginationBar.lastElementChild.classList.contains('is-hidden')) {
 // 	window.onload = function() {paginationBar.lastElementChild.textContent = amountOfPages}
@@ -574,7 +574,7 @@ function clearPagination(amountOfPages) {
 	<li class="page">5</li>
 	<li class="dots">...</li>
 	<li class="page">${amountOfPages}</li>`;
-}
+};
 
 function search(e) {
 	spinner.classList.remove('done');
@@ -597,7 +597,7 @@ function search(e) {
     warningUnShown();
     form.reset();
     paginationSection.classList.remove('is-hidden');
-  }
+  };
   api.getSearchMovie(query, searchPage).then(data => {
     moviesDataUpdate(data);
     amountOfPages = data.total_pages;
@@ -619,7 +619,7 @@ function search(e) {
       }
     } else {
       paginationBar.children[8].textContent = amountOfPages;
-    }
+    };
     if (data.results.length < 1 || query === '') {
       warningShown();
       form.reset();
@@ -632,21 +632,20 @@ function search(e) {
       renderMarkup.renderMarkup(data);
       form.reset();
       paginationSection.classList.remove('is-hidden');
-    }
+    };
   });
-}
+};
 
 function warningShown() {
 	// warning.classList.remove('visually-hidden');
 	divError.classList.remove('visually-hidden');
 	list.classList.add('visually-hidden');
 	filterForm.classList.add('visually-hidden');
-}
+};
 
 function warningUnShown() {
 	// warning.classList.add('visually-hidden');
 	divError.classList.add('visually-hidden');
 	list.classList.remove('visually-hidden');
 	filterForm.classList.remove('visually-hidden');
-}
-
+};
