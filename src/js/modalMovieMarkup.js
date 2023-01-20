@@ -1,22 +1,22 @@
-import { IMG_BASE_URL, IMG_W400 } from './api'
-import {loadLs} from './storage'
+import { IMG_BASE_URL, IMG_W400 } from './api';
+import {loadLs} from './storage';
 
 //Функция конвертации id жанра в название жанра
 
 const genresConverting = (genresIds) => {
-  const genresList = loadLs('genresList')
-  const genreArray = []
+  const genresList = loadLs('genresList');
+  const genreArray = [];
   genresIds.map(genreId => {
     genresList.map(genre => {
       if (genreId === genre.id) {genreArray.push(genre.name)} 
-    })
-  })
+    });
+  });
   return(genreArray.join(', '));
-}
+};
 
 //Функция создания разметки модального окна фильма
 const modalMoviemarkup = ({poster_path, popularity, vote_average, vote_count, original_title, genre_ids, overview}) => {
-let posterPath = ``
+let posterPath = ``;
 if(poster_path){posterPath=`${IMG_BASE_URL}${IMG_W400}/${poster_path}`}else{posterPath='https://i.ibb.co/GPMFHG6/keep-calm-poster-not-found-1.png'}
 return `
 <button class="modal__btn-closs btn__closs-modal">
@@ -77,7 +77,7 @@ return `
   
     </div>
     </div>`;
-}
+};
 
 const modalTeamLayout = `<button class="modal__btn-closs btn__closs-modal">
   <svg
