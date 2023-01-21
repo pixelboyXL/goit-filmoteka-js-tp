@@ -1,12 +1,9 @@
 import { list, lib, modalBackdrop, btnOnModalTeam, movieModal, toTopBtn} from './refs';
 import { modalMoviemarkup, modalTeamLayout } from './modalMovieMarkup';
 import { addListLibrary, funAddQueue, saveLs } from './storage';
-
 import { libMarkup } from './lib';
-
 import team from './team-info';
 import { trailerBtnListener } from './trailer';
-
 import { auth } from './log-in';
 import Notiflix from 'notiflix';
 import { chooseThemeForNotiflix } from './notiflix';
@@ -17,10 +14,10 @@ const btnLibWatch = document.querySelector('.btn--watched');
 
 if (list) {
   list.addEventListener('click', createModal);
-}
+};
 if (lib) {
   lib.addEventListener('click', createModal);
-}
+};
 btnOnModalTeam.addEventListener('click', onModalTeam);
 
 function createModal(event) {
@@ -29,31 +26,27 @@ function createModal(event) {
   //Проверка "если нажали на 'li' то открываем модалку и считываем 'key'"
   if (selectedMovie) {
     let moviesData = JSON.parse(localStorage.getItem('moviesData'));
-    
     if (dataWebLocation === 'library') {
       let watchedData = JSON.parse(localStorage.getItem('WatchedData'));
       let queueData = JSON.parse(localStorage.getItem('QueueData'));
-      if(watchedData){moviesData.push(...watchedData)}
-      if(queueData){moviesData.push(...queueData)}
-      saveLs('moviesData', moviesData)
-    }
+      if(watchedData){moviesData.push(...watchedData)};
+      if(queueData){moviesData.push(...queueData)};
+      saveLs('moviesData', moviesData);
+    };
     //Получение данных о фильме в модалку
     // const selectedMovieId = Number(selectedMovie.getAttribute('key'));
     const movieData = moviesData.find(movie => movie.id === selectedMovieId);
     renderModalContent(movieData);
     openModal();
-
     setThemOnModal();
-
     // записываем айди в модалку
     modalBackdrop.firstElementChild.dataset.id = movieData.id;
     // подключаем кнопки
     onBntAddLibray();
-
     // onBntAddLibray(selectedMovieId);
-    trailerBtnListener(selectedMovieId)
-  }
-}
+    trailerBtnListener(selectedMovieId);
+  };
+};
 
 // Кнопки
 function onBntAddLibray() {
@@ -64,16 +57,14 @@ function onBntAddLibray() {
 
   if (dataWebLocation === 'library') {
     setBtnLibrayLocalData(btnAddWatched, btnAddQueue);
-  }
+  };
   // фц проверяют есть ли в локале фильмы и ставять соответсвенный класс
   if (localStorage.getItem('Watched') !== null) {
     setStileBntWatched(idMovie, btnAddWatched);
-  }
-
+  };
   if (localStorage.getItem('Queue') !== null) {
     setStileBntQueue(idMovie, btnAddQueue);
-  }
-
+  };
   // слушатели на клик
   btnAddWatched.addEventListener('click', e => {
     chooseThemeForNotiflix();
@@ -83,14 +74,12 @@ function onBntAddLibray() {
       // добавить в локал или убрать с локала
       addListLibrary(idMovie, 'Watched');
       updataLibery(e, btnAddWatched, 'Watched');
-
       // еще раз проверить наличие в локал и изменить кнопку
       setStileBntWatched(idMovie, btnAddWatched);
       // еще раз проверить наличие в локал и изменить кнопку
       setStileBntWatched(idMovie, btnAddWatched);
     };
   });
-
   btnAddQueue.addEventListener('click', e => {
     chooseThemeForNotiflix();
     if (auth.currentUser === null) {
@@ -111,14 +100,13 @@ function setStileBntWatched(selectedMovieId, btnAddWatched) {
   } else {
     const watched = localStorage.getItem('Watched').includes(selectedMovieId);
     btnAddWatched.dataset.watched = watched;
-
     if (watched) {
       btnAddWatched.textContent = 'remove from watched';
     } else {
       btnAddWatched.textContent = 'add to watched';
-    }
-  }
-}
+    };
+  };
+};
 
 function setStileBntQueue(selectedMovieId, btnAddQueue) {
   if (localStorage.getItem('Queue') === null) {
@@ -130,15 +118,14 @@ function setStileBntQueue(selectedMovieId, btnAddQueue) {
       btnAddQueue.textContent = 'remove from queue';
     } else {
       btnAddQueue.textContent = 'add to queue';
-    }
-  }
-}
+    };
+  };
+};
 
 function updataLibery(e, btn, list) {
   const dataWebLocation = e.target
     .closest('body')
     .getAttribute('data-weblocation');
-
   if (dataWebLocation === 'library') {
     lib.innerHTML = '';
     libMarkup(list);
@@ -148,21 +135,20 @@ function updataLibery(e, btn, list) {
     // } else {
       // return
     // }
-  }
+  };
   return;
-}
+};
 
 function setBtnLibrayLocalData(btnAddWatched, btnAddQueue) {
   // const btnLibWatch = document.querySelector('.btn--watched');
-
   if (btnLibWatch.classList.contains('btn-orange')) {
     btnAddWatched.dataset.liery = true;
     btnAddQueue.dataset.liery = false;
   } else {
     btnAddWatched.dataset.liery = false;
     btnAddQueue.dataset.liery = true;
-  }
-} 
+  };
+};
 
 function openModal() {
   modalBackdrop.classList.add('modal-open');
@@ -170,52 +156,50 @@ function openModal() {
 	document.body.classList.add('modal-open')
   toTopBtn.classList.remove('btn-to-top--visible');
   setCloseOptionModal();
-}
+};
 
 function setCloseOptionModal() {
   modalBackdrop.addEventListener('click', offModalForClickBeackdrop);
   document.addEventListener('keydown', offModalForEscape);
   document
-    .querySelector('.modal__btn-closs')
+    .querySelector('.modal__btn-closs');
     .addEventListener('click', offModal);
-}
+};
 
 function renderModalContent(movieData) {
   modalBackdrop.firstElementChild.innerHTML = modalMoviemarkup(movieData);
-}
+};
 
 function offModalForEscape(e) {
   if (e.key === 'Escape') {
     offModal();
-  }
-}
+  };
+};
 
 function offModalForClickBeackdrop(e) {
   if (e.target === modalBackdrop) {
     offModal();
-  }
-}
+  };
+};
 
 function offModal() {
-	modalBackdrop.firstElementChild.classList.remove('team-modal')
-	modalBackdrop.firstElementChild.classList.add('modal')
+	modalBackdrop.firstElementChild.classList.remove('team-modal');
+	modalBackdrop.firstElementChild.classList.add('modal');
   modalBackdrop.classList.remove('modal-open');
   document.body.style.overflow = 'overlay';
-	document.body.classList.remove('modal-open')
+	document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', offModalForEscape);
   modalBackdrop.removeEventListener('keydown', offModalForClickBeackdrop);
   modalBackdrop.firstElementChild.dataset.id = '';
-
-  movieModal.innerHTML = ''
+  movieModal.innerHTML = '';
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
   if (scrolled > coords) {
     toTopBtn.classList.add('btn-to-top--visible');
   };
-}
+};
 
 // Модалка команды
-
 const modalCloseBtn = `
 <button class="modal__btn-closs btn__closs-modal">
       <svg
@@ -232,30 +216,27 @@ const modalCloseBtn = `
       </svg>
     </button>
 `;
-
 const modalTeamList = document.createElement('ul');
 const titleTeam = document.createElement('h1');
 
 function onModalTeam(e) {
   e.preventDefault();
-
   renderTeamModal();
   openModal();
 	modalBackdrop.firstElementChild.classList.add('team-modal')
 	modalBackdrop.firstElementChild.classList.remove('modal')
-}
+};
 
 function renderTeamModal() {
-	modalBackdrop.firstElementChild.innerHTML=''
-  modalTeamList.innerHTML = ''
-  titleTeam.innerHTML = ''
-  modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', titleTeam)
-  titleTeam.classList.add('team-modal__title')
-  titleTeam.insertAdjacentHTML('beforeend', 'Cinematics GoIT JS #48')
-
-	modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', modalTeamList)
-	modalBackdrop.firstElementChild.insertAdjacentHTML('beforeend', modalCloseBtn)
-	modalTeamList.classList.add('team-modal__list')
+	modalBackdrop.firstElementChild.innerHTML='';
+  modalTeamList.innerHTML = '';
+  titleTeam.innerHTML = '';
+  modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', titleTeam);
+  titleTeam.classList.add('team-modal__title');
+  titleTeam.insertAdjacentHTML('beforeend', 'Cinematics GoIT JS #48');
+	modalBackdrop.firstElementChild.insertAdjacentElement('beforeend', modalTeamList);
+	modalBackdrop.firstElementChild.insertAdjacentHTML('beforeend', modalCloseBtn);
+	modalTeamList.classList.add('team-modal__list');
 	team.map((member) => {
 		const markup = `<li class="team-modal__item">
 		<img src="${member.img}" class="team-modal__pic">
@@ -276,20 +257,19 @@ function renderTeamModal() {
 		</div>
 		</li>`
 		modalTeamList.insertAdjacentHTML('beforeend', markup)
-	})
-}
+	});
+};
 
 function setThemOnModal() {
   const bodyClassThem = document
     .querySelector('body')
     .classList.contains('dark');
-
   if (bodyClassThem) {
     modalBackdrop.firstElementChild.classList.add('modal-dark');
   } else {
     modalBackdrop.firstElementChild.classList.remove('modal-dark');
-  }
-}
+  };
+};
 
 // export { moviesData };
 
