@@ -162,7 +162,7 @@ function setCloseOptionModal() {
   modalBackdrop.addEventListener('click', offModalForClickBeackdrop);
   document.addEventListener('keydown', offModalForEscape);
   document
-    .querySelector('.modal__btn-closs');
+    .querySelector('.modal__btn-closs')
     .addEventListener('click', offModal);
 };
 
@@ -223,8 +223,8 @@ function onModalTeam(e) {
   e.preventDefault();
   renderTeamModal();
   openModal();
-	modalBackdrop.firstElementChild.classList.add('team-modal')
-	modalBackdrop.firstElementChild.classList.remove('modal')
+	modalBackdrop.firstElementChild.classList.add('team-modal');
+	modalBackdrop.firstElementChild.classList.remove('modal');
 };
 
 function renderTeamModal() {
