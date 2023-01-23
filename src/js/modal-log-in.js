@@ -32,14 +32,14 @@ export function closeModalLogIn() {
 function offModalLogInForClickBeackdrop(event) {
   if (event.target === backdropLogIn) {
     closeModalLogIn();
-  }
-}
+  };
+};
 
 function offModalLogInForEscape(event) {
   if (event.key === 'Escape') {
     closeModalLogIn();
-  }
-}
+  };
+};
 
 function showPassword() {
   if (inputPassword.getAttribute('type') === 'password') {
