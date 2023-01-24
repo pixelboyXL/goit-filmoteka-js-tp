@@ -48,7 +48,7 @@ if (formCheckbox) {
         } else {
             buttonRegister.classList.add('disabled_for_signUp')
             buttonRegister.setAttribute('disabled', 'disabled')
-        }
+        };
     };
 };
 
@@ -85,11 +85,11 @@ function onRegister(event) {
         .then((userCredential) => {
             // console.log(userCredential);
             // Registered;
-            const user = userCredential.user
+            const user = userCredential.user;
             set(ref(database, 'users/' + user.uid), {
                 username: username,
                 email: email
-            })
+            });
             closeModalLogIn();
             formLogIn.reset();
             Notiflix.Report.success('Nice!', 'Welcome to Filmoteka! Relax and enjoy your movies 🦥', 'Thanks!');
@@ -169,7 +169,7 @@ function goToSignUp() {
     signIn.classList.remove('visually-hidden');
     formLogIn.addEventListener('submit', onRegister);
     formLogIn.removeEventListener('submit', onLogin);
-}
+};
 
 export function goToSignIn() {
     formTitleSignIn.classList.remove('visually-hidden');
@@ -182,7 +182,7 @@ export function goToSignIn() {
     signIn.classList.add('visually-hidden');
     formLogIn.addEventListener('submit', onLogin);
     formLogIn.removeEventListener('submit', onRegister);
-}
+};
 
 function onUserLogIn() {
     if (headerLogIn && headerLogOut) {
