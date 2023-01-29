@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const KEY = '119d79b053f922516c6af4b71b0fd3ac';
-
 axios.defaults.baseURL = `https://api.themoviedb.org/3`;
 
 export const IMG_BASE_URL = `https://image.tmdb.org/t/p`;
@@ -26,7 +25,6 @@ export const getSearchMovie = async (query, page) => {
   return data;
 };
 
-
 export const getMovieDetails = async id => {
   const { data } = await axios.get(`/movie/${id}?api_key=${KEY}`);
   return data;
@@ -36,4 +34,3 @@ export const getMovieGenres = async () => {
   const { data } = await axios.get(`/genre/movie/list?api_key=${KEY}`);
   return data;
 };
-
