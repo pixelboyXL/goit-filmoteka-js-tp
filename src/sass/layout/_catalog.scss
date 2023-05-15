@@ -22,7 +22,6 @@
   display: grid;
   max-width: calc(320px - 40px);
   grid-template-columns: repeat(1, minmax(280px, 1fr));
-  // grid-column-gap: 16px;
   grid-row-gap: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -68,7 +67,6 @@
 .poster-list__item:hover,
 .poster-lib__item:hover {
   transform: scale(1.03) translateZ(0);
-  // box-shadow: 0 0 7px 4px #0a56c852;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Див текста */
