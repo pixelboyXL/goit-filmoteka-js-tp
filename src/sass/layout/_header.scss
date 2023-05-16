@@ -169,15 +169,6 @@
   top: 74px;
   display: inline-flex;
   justify-content: center;
-  // padding-top: 30px;
-	// padding-bottom: 40px;
-  // @include mq(tablet) {
-  // padding-top: 30px;
-	// padding-bottom: 0px;
-  // }
-	// @include mq(desktop) {
-	// 	padding-bottom: 0px;
-	// }
 }
 .header__input {
   width: 250px;
@@ -187,7 +178,6 @@
   @include mq(desktop) {
     width: 394px;
   }
-  // margin-left: -15px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -224,17 +214,6 @@
     transform: scale(1.2) rotate(40deg);
   }
 }
-/*.header-message {
-  position: absolute;
-  bottom: -55px;
-  @include mq(desktop) {
-    bottom: -42px;
-  }
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: var(--primary-current-color);
-}*/
 .header__list-button {
   display: flex;
   justify-content: space-between;
@@ -282,11 +261,6 @@
   &:hover {
     border: 1px solid var(--secondary-text-color);
   }
-  //   &:focus {
-  //     background-color: var(--secondary-text-color);
-  //     border: 1px solid var(--secondary-text-color);
-  //     box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-  //   }
 }
 .button-text {
   font-weight: 500;
