@@ -55,31 +55,6 @@ function addListLibrary(id, select) {
   //moviesData.inclues;
 };
 
-// async function addListLibrary(id, select) {
-// 	const sel = select + 'Data';
-// 	const moviesData = loadLs('moviesData');
-// 	const movieData = moviesData.find(movie => movie.id === id);
-// 	//const movieData = await getMovieDetails(id);
-// 	console.log('moviesData', moviesData);
-// 	console.log('movieData', movieData);
-// 	console.log('movData',movData);
-// 	const libArr = loadLs(select) ? loadLs(select) : [];
-// 	const libData = loadLs(sel) ? loadLs(sel) : [];
-//  	const index = libArr.indexOf(id);
-// 	if (index < 0) {
-// 		if (loadLs(sel) || loadLs(sel) !== 0) {
-// 			libArr.push(id);
-// 			libData.push(movData);
-// 		}
-//   } else {
-//     libArr.splice(index, 1);
-//     //const libData = loadLs(sel);
-//     libData.splice(index, 1);
-//   }
-//   saveLs(select, libArr);
-//   saveLs(sel, libData);
-// }
-
 export { addListLibrary, saveLs, loadLs, removeLs };
 export function moviesDataUpdate(data) {
   localStorage.setItem('moviesData', JSON.stringify(data.results));
