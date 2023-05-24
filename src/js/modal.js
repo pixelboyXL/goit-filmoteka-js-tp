@@ -34,7 +34,6 @@ function createModal(event) {
       saveLs('moviesData', moviesData);
     };
     //Получение данных о фильме в модалку
-    // const selectedMovieId = Number(selectedMovie.getAttribute('key'));
     const movieData = moviesData.find(movie => movie.id === selectedMovieId);
     renderModalContent(movieData);
     openModal();
@@ -54,7 +53,6 @@ function onBntAddLibray() {
   const btnAddWatched = document.querySelector('.modal__add-watched');
   const btnAddQueue = document.querySelector('.modal__add-queue');
   const idMovie = Number(modalBackdrop.firstElementChild.dataset.id);
-
   if (dataWebLocation === 'library') {
     setBtnLibrayLocalData(btnAddWatched, btnAddQueue);
   };
@@ -129,18 +127,12 @@ function updataLibery(e, btn, list) {
   if (dataWebLocation === 'library') {
     lib.innerHTML = '';
     libMarkup(list);
-    // const dataBtn = btn.dataset.liery;
-    // if (dataBtn === 'true') {
-      btn.setAttribute('disabled', true);
-    // } else {
-      // return
-    // }
+    btn.setAttribute('disabled', true);
   };
   return;
 };
 
 function setBtnLibrayLocalData(btnAddWatched, btnAddQueue) {
-  // const btnLibWatch = document.querySelector('.btn--watched');
   if (btnLibWatch.classList.contains('btn-orange')) {
     btnAddWatched.dataset.liery = true;
     btnAddQueue.dataset.liery = false;
@@ -270,6 +262,4 @@ function setThemOnModal() {
     modalBackdrop.firstElementChild.classList.remove('modal-dark');
   };
 };
-
-// export { moviesData };
 
