@@ -28,32 +28,6 @@ import { loadLs } from './storage';
 // let sort = '';
 // let page = loadLs('page-pg');
 
-//Выводит выбранный жанр
-// function eventGenre(evn) {
-//   if (evn) {
-//     genre = evn.target.value;
-//     // console.log(refs.genreForm);
-//   };
-// return getSearchForm(page, query, genre, year, sort).then(r =>
-//   renderMarkup(r));
-// };
-// //Выводит выбранный год
-// function eventYear(evn) {
-//   if (evn) {
-//     year = evn.target.value;
-//   };
-//   // return getSearchForm(page, query, genre, year, sort).then(r =>
-//   //   renderMarkup(r));
-// };
-// //Выводит выбранный сорт
-// function eventSort(evn) {
-//   if (evn) {
-//     sort = evn.target.value;
-//   };
-// return getSearchForm(page, query, genre, year, sort).then(r =>
-//   renderMarkup(r));
-// };
-
 export const getSearchForm = async (
   page = '',
   query = '',
