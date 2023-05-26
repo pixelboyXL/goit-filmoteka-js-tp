@@ -22,12 +22,6 @@ import { loadLs } from './storage';
 //   refs.sortForm.addEventListener('input', eventSort);
 // };
 
-// let query = '';
-// let genre = '';
-// let year = '';
-// let sort = '';
-// let page = loadLs('page-pg');
-
 export const getSearchForm = async (
   page = '',
   query = '',
