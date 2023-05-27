@@ -11,17 +11,6 @@ import { loadLs } from './storage';
 //   yearForm: document.querySelector('#yearForm'),
 // };
 
-// if (refs.genreForm) {
-//   refs.genreForm.addEventListener('input', eventGenre);
-//   console.log(refs.genreForm);
-// };
-// if (refs.yearForm) {
-//   refs.yearForm.addEventListener('input', eventYear);
-// };
-// if (refs.sortForm) {
-//   refs.sortForm.addEventListener('input', eventSort);
-// };
-
 export const getSearchForm = async (
   page = '',
   query = '',
