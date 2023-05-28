@@ -4,13 +4,6 @@ import { saveLs } from './storage';
 import { renderMarkup } from './renderMarkup';
 import { loadLs } from './storage';
 
-// const refs = {
-//   filterForm: document.querySelector('#filter-form'),
-//   sortForm: document.querySelector('#sortForm'),
-//   genreForm: document.querySelector('#genreForm'),
-//   yearForm: document.querySelector('#yearForm'),
-// };
-
 export const getSearchForm = async (
   page = '',
   query = '',
