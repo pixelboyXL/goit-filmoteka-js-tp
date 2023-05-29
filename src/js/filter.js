@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { KEY } from './api';
 import { saveLs } from './storage';
-import { renderMarkup } from './renderMarkup';
-import { loadLs } from './storage';
 
 export const getSearchForm = async (
   page = '',
