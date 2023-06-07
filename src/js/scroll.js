@@ -21,9 +21,6 @@ function onToTopBtn() {
     };
 };
 
-onScroll();
-onToTopBtn();
-
 function setThemOnButtonToTop() {
     if (document.querySelector('body').classList.contains('dark')) {
         toTopBtn.classList.add('btn-to-top--dark');
