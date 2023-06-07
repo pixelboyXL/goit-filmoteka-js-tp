@@ -1,5 +1,5 @@
 import { loadLs } from './storage';
-import { renderLibMarkup, renderMarkup } from './renderMarkup';
+import { renderLibMarkup } from './renderMarkup';
 import { lib } from './refs';
 
 const btnWatched = document.querySelector('.btn--watched');
