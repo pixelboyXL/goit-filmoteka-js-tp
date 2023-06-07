@@ -24,17 +24,6 @@ const removeLs = key => {
   };
 };
 
-// const moviesData = loadLs('moviesData');
-// console.log('moviesData', moviesData);
-// const WatchedData = loadLs('WatchedData');
-// console.log('WatchedData', WatchedData);
-// const QueueData = loadLs('QueueData');
-// console.log('QueueData', QueueData);
-// const Watched = loadLs('Watched');
-// console.log('Watched', Watched);
-// const Queue = loadLs('Queue');
-// console.log('Queue', Queue);
-
 function addListLibrary(id, select) {
   const sel = select + 'Data';
   const moviesData = loadLs('moviesData');
