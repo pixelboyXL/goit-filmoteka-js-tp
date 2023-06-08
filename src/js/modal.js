@@ -1,6 +1,6 @@
 import { list, lib, modalBackdrop, btnOnModalTeam, movieModal, toTopBtn} from './refs';
-import { modalMoviemarkup, modalTeamLayout } from './modalMovieMarkup';
-import { addListLibrary, funAddQueue, saveLs } from './storage';
+import { modalMoviemarkup } from './modalMovieMarkup';
+import { addListLibrary, saveLs } from './storage';
 import { libMarkup } from './lib';
 import team from './team-info';
 import { trailerBtnListener } from './trailer';
