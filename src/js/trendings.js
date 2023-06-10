@@ -1,4 +1,4 @@
-import { getTrending, IMG_BASE_URL, IMG_W400 } from './api';
+import { getTrending } from './api';
 import { renderMarkup } from './renderMarkup';
 import { saveLs } from './storage';
 
