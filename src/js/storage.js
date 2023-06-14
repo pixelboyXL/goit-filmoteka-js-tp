@@ -36,12 +36,10 @@ function addListLibrary(id, select) {
     libData.push(movieData);
   } else {
     libArr.splice(index, 1);
-    //const libData = loadLs(sel);
     libData.splice(index, 1);
   };
   saveLs(select, libArr);
   saveLs(sel, libData);
-  //moviesData.inclues;
 };
 
 export { addListLibrary, saveLs, loadLs, removeLs };
