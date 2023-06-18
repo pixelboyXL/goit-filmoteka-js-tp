@@ -42,7 +42,6 @@ function createModal(event) {
     modalBackdrop.firstElementChild.dataset.id = movieData.id;
     // подключаем кнопки
     onBntAddLibray();
-    // onBntAddLibray(selectedMovieId);
     trailerBtnListener(selectedMovieId);
   };
 };
