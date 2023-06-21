@@ -38,8 +38,6 @@ if (formLogIn) {
     formLogIn.addEventListener('submit', onLogin);
 };
 
-// location.href = 'library.html';
-
 if (formCheckbox) {
     formCheckbox.onchange = function () {
         if (this.checked) {
