@@ -58,7 +58,6 @@ return `
       genre_ids
     )}</li>
   </ul>
-  
 </div>
 
 <div class="modal__about">
@@ -68,14 +67,12 @@ return `
   </p>
 </div>
 <div class="modal__buttons">
-      <button type="button" class="modal__add-watched" data-watched='false' data-liery='false'>add to watched</button>
-      <button type="button" class="modal__add-queue" data-queue='false' data-liery='false'>add to queue</button>
-      
+    <button type="button" class="modal__add-watched" data-watched='false' data-liery='false'>add to watched</button>
+    <button type="button" class="modal__add-queue" data-queue='false' data-liery='false'>add to queue</button>
     </div>
-   <div class='trailerBtnWrap'> <button class="trailerBtn"></button></div>
-  
+  <div class='trailerBtnWrap'> <button class="trailerBtn"></button></div>
     </div>
-    </div>`;
+  </div>`;
 };
 
 const modalTeamLayout = `<button class="modal__btn-closs btn__closs-modal">
@@ -93,68 +90,68 @@ const modalTeamLayout = `<button class="modal__btn-closs btn__closs-modal">
   </svg>
 </button> <ul class="team__list">
   <li class="team__item">
-      <a href="https://github.com/dimaniagara">
-        <img class ="team__image" src="./images/team/Dima.jfif" />
-      </a>
-      <p class="team__subtitle">Dmitri Suhak</p>
-      <p class="team__text text">Junior Developer</p>
+    <a href="https://github.com/dimaniagara">
+      <img class ="team__image" src="./images/team/Dima.jfif" />
+    </a>
+    <p class="team__subtitle">Dmitri Suhak</p>
+    <p class="team__text text">Junior Developer</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
   <li class="team__item">
     <a href="https://github.com/dimaniagara">
       <img class ="team__image" src="./images/team/Dima.jfif" />
     </a>
-      <p class="team__subtitle">Name Last Name</p>
-      <p class="team__text text">Position</p>
+    <p class="team__subtitle">Name Last Name</p>
+    <p class="team__text text">Position</p>
   </li>
 </ul>`;
- 
+
 export { modalMoviemarkup, modalTeamLayout };
