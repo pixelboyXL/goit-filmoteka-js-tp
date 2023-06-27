@@ -23,4 +23,5 @@ const removeSs = key => {
     console.error('Get state error: ', error.message);
   };
 };
+
 export { saveSs, loadSs, removeSs };
