@@ -4,6 +4,5 @@ import { saveLs } from './storage';
 
 getTrending(1).then((r) => {
 	renderMarkup(r),
-	//Сохранение результата запроса в localStorage
 	saveLs("moviesData", r.results);
 });
