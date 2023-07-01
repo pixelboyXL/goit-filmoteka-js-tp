@@ -16,8 +16,7 @@ export const getSearchForm = async (
     queryFetch: `&query=${query}`,
     sort: sort !== '' && sort !== 'start' ? `&sort_by=${sort}` : '',
     discover: `/trending`,
-    week: `/week`, 
-//Если нету query, то по дефолту делается запрос на тренды недели
+    week: `/week`,
   };
   if (query === '') {
     f.queryFetch = '';
