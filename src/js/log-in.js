@@ -53,6 +53,7 @@ if (formCheckbox) {
 if (signUp) {
     signUpLink.addEventListener('click', goToSignUp);
 };
+
 if (signIn) {
     signInLink.addEventListener('click', goToSignIn);
 };
