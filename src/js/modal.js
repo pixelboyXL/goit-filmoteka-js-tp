@@ -9,7 +9,6 @@ import Notiflix from 'notiflix';
 import { chooseThemeForNotiflix } from './notiflix';
 
 const dataWebLocation = document.querySelector('body').getAttribute('data-weblocation');
-
 const btnLibWatch = document.querySelector('.btn--watched');
 
 if (list) {
