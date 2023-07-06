@@ -35,10 +35,8 @@ return `
 <div class="modal__movi-poster">
 <img src="${posterPath}" alt="placeholder" />
 </div>
-
 <div class="modal_movi-info">
 <h2 class="modal__title">${original_title}</h2>
-
 <div class="modal__info-card info-card">
   <ul class="info-card__list-parametrs">
     <li class="info-card__item info-card__item-paramter">Vote / Votes</li>
@@ -59,7 +57,6 @@ return `
     )}</li>
   </ul>
 </div>
-
 <div class="modal__about">
   <h3 class="modal__about-title">ABOUT </h3>
   <p class="modal__about-text">
