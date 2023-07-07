@@ -12,7 +12,6 @@ const prevBtn = document.querySelector('.page-btn.prev');
 const nextBtn = document.querySelector('.page-btn.next');
 const paginationSection = document.querySelector('.pagination-section');
 const toMainBtn = document.querySelector('.to_main__link');
-
 const refs = {
 	filterForm: document.querySelector('#filter-form'),
   sortForm: document.querySelector('#sortForm'),
@@ -197,7 +196,7 @@ if (nextBtn) {
   paginationBar.addEventListener('click', onPageClick);
 };
 
-if(location.pathname.split("/").slice(-1) == 'library.html') {
+if (location.pathname.split("/").slice(-1) == 'library.html') {
 	amountOfPages = 1000;
 	page=1;
 	genre='';
@@ -212,7 +211,7 @@ if(location.pathname.split("/").slice(-1) == 'library.html') {
 	saveLs('sort-pg', sort);
 };
 
-if(location.pathname.split("/").slice(-1) != 'library.html') {
+if (location.pathname.split("/").slice(-1) != 'library.html') {
 	spinner.classList.remove('done');
 	getSearchForm(page, query, genre, year, sort).then(data => {
 		renderMarkup.renderMarkup(data);
@@ -546,7 +545,6 @@ function renderPagination(e) {
   } else {
     prevBtn.classList.remove('is-hidden');
   };
-
   getSearchForm(page, query, genre, year, sort).then(data => {
     window.scrollTo({
       top: 100,
