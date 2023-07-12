@@ -46,8 +46,8 @@ function funEmptyLib(libName) {
 function createEmptyLibMarkup(data) {
   return `
 		<div class='list-empty__shild blink'>
-			<h3 class= 'list-empty__title'>Your ${data} list is empty!</h3>
-			<p class='blink' >to add a movie to the ${data} list, click the corresponding button in the poster window</p>
+			<h3 class='list-empty__title'>Your ${data} list is empty!</h3>
+			<p class='list-empty__text'>To add a movie to the ${data} list, click the corresponding button in the poster window</p>
 	</div>`;
 };
 

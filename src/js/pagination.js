@@ -1,6 +1,6 @@
 import * as api from './api';
 import * as renderMarkup from './renderMarkup';
-import { list, form, divError, filterForm, logo, paginationBar, spinner} from './refs';
+import { list, form, divError, filterForm, logo, homeLink, paginationBar, spinner} from './refs';
 import { loadLs, moviesDataUpdate, saveLs } from './storage';
 import { getSearchForm } from './filter';
 
@@ -18,13 +18,6 @@ const refs = {
   genreForm: document.querySelector('#genreForm'),
   yearForm: document.querySelector('#yearForm'),
   btnReset: document.querySelector('#btnResetFilter'),
-};
-
-if (toMainBtn) {
-	toMainBtn.addEventListener('click', (e) => {
-		page = 1;
-		saveLs('page-pg', page);
-	});
 };
 
 if (refs.genreForm) {
@@ -76,6 +69,11 @@ function submitResetFilter(evn) {
 };
 
 logo.addEventListener('click', onLogoClick);
+homeLink.addEventListener('click', onLogoClick);
+
+if (toMainBtn) {
+  toMainBtn.addEventListener('click', onLogoClick);
+};
 
 function onLogoClick(e) {
 	amountOfPages = 1000;

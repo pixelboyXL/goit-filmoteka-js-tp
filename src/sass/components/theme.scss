@@ -63,6 +63,13 @@ body.dark::-webkit-scrollbar-thumb {
 		background-color: var(--dark-body-theme);
 	}
 }
+.dark .to_main__text {
+	color: var(--bisquit-color);
+}
+.dark .list-empty__title,
+.dark .list-empty__text {
+	color: var(--bisquit-color);
+}
 .dark .footer {
 	background-color: var(--modal-dark-them-bcg);
 	color: var(--bisquit-color);
